@@ -4,6 +4,18 @@ const { title } = require('process');
 const server =  http.createServer((req,res)=>{
     console.log(req.url,req.method,req.headers);
     // process.exit();
+
+    if(req.url==='/'){
+        res.write('<html>');
+        res.write('<head><title>enter message</title></head>');
+       res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>');
+        res.write('</html>');
+       return res.end();
+    }
+
+
+  
+
     res.setHeader('Content-type','text/html');
     res.write('<html>');
     res.write('<head><title>first node</title></head>');
