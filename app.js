@@ -1,5 +1,12 @@
 const http = require('http');
 
+const server =  http.createServer((req,res)=>{
+    console.log(req);
+    // process.exit();
+});
+
+server.listen(3000);
+
 ///differentn way create function
 
 //// named function
@@ -18,9 +25,3 @@ const http = require('http');
 //     console.log(req);
 // });
 
-const server =  http.createServer((req,res)=>{
-        console.log(req);
-        // process.exit();
-    });
-
-    server.listen(3000);
