@@ -44,12 +44,24 @@ const requestHandler =(req,res) => {
     
 }; 
 
+// module.exports ada 2 cara
 
  // supaya bisa dipanggil di class lain atau diimport (require) class lain
- // bisa juga dibuat multi variable / dijadikan sebagai object
-module.exports  = {
-    handler:requestHandler,
-    someText:'hardcode text',
-};  
 
+//  module.exports = requestHandler;
+
+ // bisa juga dibuat multi variable / dijadikan sebagai object
+
+// module.exports  = {
+//     handler:requestHandler,
+//     someText:'hardcode text',
+// };  
+
+
+// bisa juga memakai cara ini
+// module.exports.handler = requestHandler;
+// module.exports.someText= 'hardcode text';
  
+// bisa juga pakai shotrcut exports (khusus node.js)
+exports.handler = requestHandler;
+exports.someText= 'hardcode text';
