@@ -1,8 +1,8 @@
 const http = require('http'); // karena diambil dari global
 const routes = require('./routes'); // diambil dari local,memakai titik slash
 
-
-const server = http.createServer(routes);  // karena routes juga berisi function
+console.log(routes.someText);
+const server = http.createServer(routes.handler);  // karena routes juga berisi function
 server.listen(3000);
 
 ///differentn way create function

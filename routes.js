@@ -42,8 +42,14 @@ const requestHandler =(req,res) => {
     res.write('</html>');
     res.end();
     
-}; // cara anonymous function 
+}; 
 
-module.exports  = requestHandler; 
+
+ // supaya bisa dipanggil di class lain atau diimport (require) class lain
+ // bisa juga dibuat multi variable / dijadikan sebagai object
+module.exports  = {
+    handler:requestHandler,
+    someText:'hardcode text',
+};  
 
  
